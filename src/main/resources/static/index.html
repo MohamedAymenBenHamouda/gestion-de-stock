@@ -1,0 +1,104 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Gestion de Stock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="logo1111 (3).png" alt="TechStore Logo">
+            </div>
+            <div class="logo-text">TechStore</div>
+        </div>
+        
+        <div class="nav-menu">
+            <a href="#" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="stock.html" class="nav-item">
+                <i class="fas fa-box"></i>
+                <span>Stock</span>
+            </a>
+            <a href="produit.html" class="nav-item">
+                <i class="fas fa-cube"></i>
+                <span>Produit</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-store"></i>
+                <span>Gestion Points de Ventes</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Gestion Responsables</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-exchange-alt"></i>
+                <span>Mouvements de stocks</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Deconnexion</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="welcome-card">
+            <h1 class="welcome-title">Bienvenue</h1>
+            <p id="date"></p>
+        </div>
+        
+        <div class="points-container">
+            <div class="point-card">
+                <h2 class="point-title">Point de vente 1</h2>
+                <p class="point-location">Tunis</p>
+            </div>
+            
+            <div class="point-card">
+                <h2 class="point-title">Point de vente 2</h2>
+                <p class="point-location">Bizerte</p>
+            </div>
+            
+            <div class="point-card">
+                <h2 class="point-title">Point de vente 3</h2>
+                <p class="point-location">Sfax</p>
+            </div>
+            
+            <div class="point-card">
+                <h2 class="point-title">Point de vente 4</h2>
+                <p class="point-location">Sousse</p>
+            </div>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-header">Total des produits</div>
+                <div class="stat-value">1,248</div>
+                <div class="stat-description">Produits référencés</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-header">Stock disponible</div>
+                <div class="stat-value">15,742</div>
+                <div class="stat-description">Unités en stock</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-header">Points de vente</div>
+                <div class="stat-value">4</div>
+                <div class="stat-description">Points de vente actifs</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Font Awesome Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

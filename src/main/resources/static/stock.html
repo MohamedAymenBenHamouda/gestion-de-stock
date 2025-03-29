@@ -1,0 +1,109 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Gestion de Stock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="logo1111 (3).png" alt="TechStore Logo">
+            </div>
+            <div class="logo-text">TechStore</div>
+        </div>
+        
+        <div class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-box"></i>
+                <span>Stock</span>
+            </a>
+            <a href="produit.html" class="nav-item">
+                <i class="fas fa-cube"></i>
+                <span>Produit</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-store"></i>
+                <span>Gestion Points de Ventes</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Gestion Responsables</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-exchange-alt"></i>
+                <span>Mouvements de stocks</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Deconnexion</span>
+            </a>
+        </div>
+    </div>
+    <div class="table-container">
+        <div class="header">
+            <h2>Niveau de Stock</h2>
+        </div>
+        <div class="filters">
+            <div class="filter-buttons">
+                <button class="filter-btn active">Entrepot</button>
+                <button class="filter-btn"><a href="vente1.html" class="nav-item"></a>point de vente 1</button>
+                <button class="filter-btn"><a href="vente2.html" class="nav-item"></a>point de vente 2</button>
+                <button class="filter-btn"><a href="vente3.html" class="nav-item"></a>point de vente 3</button>
+                <button class="filter-btn"><a href="vente4.html" class="nav-item"></a>point e vente 4</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="nom">ID</label>
+                    <input type="text" id="ID" placeholder="54364512">
+                </div>
+                <div class="form-group">
+                    <label for="nom">ID entrepot</label>
+                    <input type="text" id="ID-entrepot" placeholder="8558455">
+                </div>
+                <div class="form-group">
+                    <label for="nom">Nom de l'article</label>
+                    <input type="text" id="nom" placeholder="HP">
+                </div>
+                
+
+                
+                <div class="form-group">
+                    <label for="quantite">Quantité</label>
+                    <input type="number" id="quantite" min="1" value="1">
+                </div>
+    
+                <button id="ajouter">Valider</button>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ID entrepot</th>
+                            <th>Nom article</th>
+                            <th>Quantité</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Articles seront ajoutés ici -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Font Awesome Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
