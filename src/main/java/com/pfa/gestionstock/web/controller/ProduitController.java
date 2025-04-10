@@ -17,7 +17,7 @@ public class ProduitController {
     private ProduitService produitService;
 
     // Créer un produit
-    @PostMapping
+     @PostMapping
     public Produit createProduit(@RequestBody Produit produit) {
         return produitService.createProduit(produit);
     }
@@ -48,6 +48,13 @@ public class ProduitController {
         produitService.deleteProduit(id);
         return ResponseEntity.noContent().build();
     }
+
+    /*@PostMapping
+    public ResponseEntity<Produit> createProduit(
+            @Validated @RequestBody ProduitRequest request) {
+        Produit produit = produitService.createProduitWithStock(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(produit);
+    }*/
 
     /*  Récupérer des produits par catégorie
     @GetMapping("/categorie/{categorie}")

@@ -13,7 +13,7 @@ public class Produit {
     @Column(nullable = false, length = 100)
     private String nom;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String categorie;
 
     @Column(nullable = false)
@@ -84,4 +84,16 @@ public class Produit {
     public void setImage(String image) {
         this.image = image;
     }
+   /*  @OneToOne(mappedBy = "produit", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Stock stock; // Relation bidirectionnelle
+
+    
+    public void associateStock(Stock stock, Entrepot entrepot) {
+        if (stock == null || entrepot == null) {
+            throw new IllegalArgumentException("Stock et Entrepot ne peuvent pas être null");
+        }
+        this.stock = stock;
+        stock.setProduit(this);
+        stock.setEntrepot(entrepot);
+    }*/
 }

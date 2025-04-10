@@ -173,3 +173,24 @@ document.getElementById('ajouter').addEventListener('click', function () {
     document.getElementById('prix').value = '';
 });
 
+// Initialisation du tableau au chargement de la page
+window.onload = function () {
+    document.getElementById('table-body').innerHTML = ""; // Nettoyage du tableau
+
+    // Appel à l'API pour récupérer tous les produits
+    fetch("http://localhost:8083/api/produits")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erreur lors du chargement des produits");
+            }
+            return response.json();
+        })
+        .then(data => {
+            data.forEach(article => {
+                ajouterArticle(article); // Affiche chaque produit dans le tableau
+            });
+        })
+        .catch(error => {
+            console.error("Erreur :", error);
+        });
+};

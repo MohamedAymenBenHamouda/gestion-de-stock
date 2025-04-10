@@ -1,9 +1,17 @@
 package com.pfa.gestionstock.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Table(name = "stocks")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString(exclude = {"produit", "entrepot"})
+@EqualsAndHashCode
 public class Stock {
 
     @Id
@@ -12,68 +20,26 @@ public class Stock {
 
     @ManyToOne
     @JoinColumn(name = "produit_id", nullable = false)
+    @JsonIgnoreProperties("stocks") // Évite la boucle infinie avec Produit
     private Produit produit;
 
     @ManyToOne
     @JoinColumn(name = "entrepot_id", nullable = false)
+    @JsonIgnoreProperties("stocks") // Évite la boucle infinie avec Entrepot
     private Entrepot entrepot;
 
     @Column(nullable = false)
     private int quantite;
 
-    // Constructeurs
-    public Stock() {}
+    @Column(nullable = false)
+    private String nom;
 
-    public Stock(Produit produit, Entrepot entrepot, int quantite) {
-        this.produit = produit;
-        this.entrepot = entrepot;
-        this.quantite = quantite;
+    // Vérification avant insertion ou mise à jour
+    @PrePersist
+    @PreUpdate
+    private void verifierQuantite() {
+        if (this.quantite < 0) {
+            throw new IllegalArgumentException("La quantité ne peut pas être négative");
+        }
     }
-
-    // Getters et setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Produit getProduit() {
-        return produit;
-    }
-
-    public void setProduit(Produit produit) {
-        this.produit = produit;
-    }
-
-    public Entrepot getEntrepot() {
-        return entrepot;
-    }
-
-    public void setEntrepot(Entrepot entrepot) {
-        this.entrepot = entrepot;
-    }
-
-    public int getQuantite() {
-        return quantite;
-    }
-
-    public void setQuantite(int quantite) {
-        this.quantite = quantite;
-    }
-
-    // Méthode toString (optionnelle)
-    @Override
-    public String toString() {
-        return "Stock{" +
-                "id=" + id +
-                ", produit=" + produit +
-                ", entrepot=" + entrepot +
-                ", quantite=" + quantite +
-                '}';
-    }
-
-    // Méthodes equals et hashCode (optionnelles)
-    
 }

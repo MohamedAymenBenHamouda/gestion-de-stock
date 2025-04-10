@@ -36,7 +36,7 @@
                 <i class="fas fa-users"></i>
                 <span>Gestion Responsables</span>
             </a>
-            <a href="mouvement.html" class="nav-item">
+            <a href="#" class="nav-item">
                 <i class="fas fa-exchange-alt"></i>
                 <span>Mouvements de stocks</span>
             </a>
@@ -46,58 +46,48 @@
             </a>
         </div>
     </div>
-    
-    <!-- Main Content -->
-    <div class="main-content">
-        <div class="welcome-card">
-            <h1 class="welcome-title">Bienvenue</h1>
-            <p id="date"></p>
-        </div>
+    <div class="main-content2">
+        <h2>Mouvement de Stock</h2>
         
-        <div class="points-container">
-            <div class="point-card">
-                <h2 class="point-title">Point de vente 1</h2>
-                <p class="point-location">Tunis</p>
+        <div class="mouvement-form2">
+            <div class="form-section2">
+                <label><strong>Produit:</strong></label>
+                <input type="text" placeholder="Sélectionner produit">
             </div>
             
-            <div class="point-card">
-                <h2 class="point-title">Point de vente 2</h2>
-                <p class="point-location">Bizerte</p>
+            <div class="form-section2">
+                <label for="source_type">Source:</label>
+                <select id="source_type">
+                    <option value="entrepot">Entrepôt</option>
+                    <option value="point_de_vente">Point de Vente 1</option>
+                    <option value="point_de_vente">Point de Vente 2</option>
+                    <option value="point_de_vente">Point de Vente 3</option>
+                    <option value="point_de_vente">Point de Vente 4</option>
+                </select>
+                <input type="text" placeholder="ID Source">
             </div>
             
-            <div class="point-card">
-                <h2 class="point-title">Point de vente 3</h2>
-                <p class="point-location">Sfax</p>
+            <div class="form-section2">
+                <label for="source_type">Destination:</label>
+                <select id="source_type">                   
+                    <option value="point_de_vente">Point de Vente 1</option>
+                    <option value="point_de_vente">Point de Vente 2</option>
+                    <option value="point_de_vente">Point de Vente 3</option>
+                    <option value="point_de_vente">Point de Vente 4</option>
+                </select>
+                <input type="text" placeholder="ID Destination">
             </div>
             
-            <div class="point-card">
-                <h2 class="point-title">Point de vente 4</h2>
-                <p class="point-location">Sousse</p>
-            </div>
-        </div>
-        
-        <div class="stats-container">
-            <div class="stat-card">
-                <div class="stat-header">Total des produits</div>
-                <div class="stat-value">1,248</div>
-                <div class="stat-description">Produits référencés</div>
+            <div class="form-section2">
+                <label><strong>Quantité:</strong></label>
+                <input type="number" min="1" placeholder="Quantité">
             </div>
             
-            <div class="stat-card">
-                <div class="stat-header">Stock disponible</div>
-                <div class="stat-value">15,742</div>
-                <div class="stat-description">Unités en stock</div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-header">Points de vente</div>
-                <div class="stat-value">4</div>
-                <div class="stat-description">Points de vente actifs</div>
-            </div>
+            <button class="action-btn2">Effectuer le mouvement</button>
         </div>
     </div>
+
     
-    <!-- Font Awesome Icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="script.js"></script>
 </body>
