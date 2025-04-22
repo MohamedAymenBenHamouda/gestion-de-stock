@@ -1,13 +1,14 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechStore - Gestion de Stock</title>
+    <title>Transfert de Stock</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
+     <!-- Sidebar -->
+     <div class="sidebar">
         <div class="logo-container">
             <div class="logo">
                 <img src="logo1111 (3).png" alt="TechStore Logo">
@@ -16,7 +17,7 @@
         </div>
         
         <div class="nav-menu">
-            <a href="#" class="nav-item">
+            <a href="index.html" class="nav-item">
                 <i class="fas fa-home"></i>
                 <span>Dashboard</span>
             </a>
@@ -36,7 +37,7 @@
                 <i class="fas fa-users"></i>
                 <span>Gestion Responsables</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="mouvement.html" class="nav-item">
                 <i class="fas fa-exchange-alt"></i>
                 <span>Mouvements de stocks</span>
             </a>
@@ -47,48 +48,44 @@
         </div>
     </div>
     <div class="main-content2">
-        <h2>Mouvement de Stock</h2>
+        <div class="header2">
+            <h2>Mouvement de Stock</h2>
+        </div>
+        
         
         <div class="mouvement-form2">
             <div class="form-section2">
-                <label><strong>Produit:</strong></label>
-                <input type="text" placeholder="Sélectionner produit">
+                <label for="produitId"><strong>ID Produit:</strong></label>
+                <input type="text" id="produitId" placeholder="ID du produit">
             </div>
-            
+
             <div class="form-section2">
-                <label for="source_type">Source:</label>
-                <select id="source_type">
-                    <option value="entrepot">Entrepôt</option>
-                    <option value="point_de_vente">Point de Vente 1</option>
-                    <option value="point_de_vente">Point de Vente 2</option>
-                    <option value="point_de_vente">Point de Vente 3</option>
-                    <option value="point_de_vente">Point de Vente 4</option>
+                <label for="entrepotId">Entrepôt (source):</label>
+                <select id="entrepotId">
+                    <option value="1">Entrepôt 1</option>
+                    <option value="2">Entrepôt 2</option>
                 </select>
-                <input type="text" placeholder="ID Source">
             </div>
-            
+
             <div class="form-section2">
-                <label for="source_type">Destination:</label>
-                <select id="source_type">                   
-                    <option value="point_de_vente">Point de Vente 1</option>
-                    <option value="point_de_vente">Point de Vente 2</option>
-                    <option value="point_de_vente">Point de Vente 3</option>
-                    <option value="point_de_vente">Point de Vente 4</option>
+                <label for="pointDeVenteId">Point de Vente (destination):</label>
+                <select id="pointDeVenteId">
+                    <option value="1">Point de Vente 1</option>
+                    <option value="2">Point de Vente 2</option>
+                    <option value="3">Point de Vente 3</option>
+                    <option value="4">Point de Vente 4</option>
                 </select>
-                <input type="text" placeholder="ID Destination">
             </div>
-            
+
             <div class="form-section2">
-                <label><strong>Quantité:</strong></label>
-                <input type="number" min="1" placeholder="Quantité">
+                <label for="quantite"><strong>Quantité:</strong></label>
+                <input type="number" id="quantite" min="1" placeholder="Quantité à transférer">
             </div>
-            
-            <button class="action-btn2">Effectuer le mouvement</button>
+
+            <button class="action-btn2" onclick="transfertStock()">Effectuer le mouvement</button>
         </div>
     </div>
-
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script4.js"></script>
 </body>
 </html>

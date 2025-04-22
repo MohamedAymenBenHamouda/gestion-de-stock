@@ -1,30 +1,32 @@
-document.getElementById("mouvement-form").addEventListener("submit", function(e) {
-    e.preventDefault();
+function transfertStock() {
+  const produitId = document.getElementById('produitId').value;
+  const entrepotId = document.getElementById('entrepotId').value;
+  const pointDeVenteId = document.getElementById('pointDeVenteId').value;
+  const quantite = document.getElementById('quantite').value;
 
-    const mouvement = {
-        produitId: parseInt(document.getElementById("produit_id").value),
-        sourceType: document.getElementById("source_type").value,
-        sourceId: parseInt(document.getElementById("source_id").value),
-        destinationType: document.getElementById("destination_type").value,
-        destinationId: parseInt(document.getElementById("destination_id").value),
-        quantite: parseInt(document.getElementById("quantite").value)
-    };
+  if (!produitId || !entrepotId || !pointDeVenteId || !quantite) {
+      alert("Veuillez remplir tous les champs.");
+      return;
+  }
 
-    fetch("http://localhost:8083/api/mouvements", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(mouvement)
-    })
-    .then(res => {
-        if (!res.ok) throw new Error("Erreur lors du mouvement de stock");
-        return res.json();
-    })
-    .then(data => {
-        alert("Mouvement de stock effectué avec succès !");
-        console.log(data);
-    })
-    .catch(err => {
-        console.error("Erreur:", err);
-        alert("Erreur lors du mouvement de stock");
-    });
-});
+  fetch('http://localhost:8083/api/transfert/entrepot-to-pdv', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: `produitId=${produitId}&entrepotId=${entrepotId}&pointDeVenteId=${pointDeVenteId}&quantite=${quantite}`
+  })
+  .then(response => {
+      if (!response.ok) {
+          return response.text().then(text => { throw new Error(text) });
+      }
+      return response.text();
+  })
+  .then(message => {
+      alert("✅ Transfert effectué avec succès !");
+  })
+  .catch(error => {
+      console.error('Erreur de transfert :', error);
+      alert("❌ Échec du transfert : " + error.message);
+  });
+}
