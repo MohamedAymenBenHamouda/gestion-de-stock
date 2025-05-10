@@ -50,4 +50,12 @@ public class UtilisateurService {
     public List<Utilisateur> getUtilisateursByRole(Role role) {
         return utilisateurRepository.findByRole(role);
     }
+    public Optional<Utilisateur> login(String email, String motDePasse) {
+        Optional<Utilisateur> utilisateurOpt = utilisateurRepository.findByAdresseEmail(email);
+        if (utilisateurOpt.isPresent() && utilisateurOpt.get().getMotDePasse().equals(motDePasse)) {
+            return utilisateurOpt;
+        }
+        return Optional.empty();
+    }
+    
 }

@@ -62,4 +62,18 @@ public class UtilisateurController {
     public List<Utilisateur> getUtilisateursByRole(@PathVariable Role role) {
         return utilisateurService.getUtilisateursByRole(role);
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody Utilisateur loginRequest) {
+        Optional<Utilisateur> utilisateurOpt = utilisateurService.login(loginRequest.getAdresseEmail(), loginRequest.getMotDePasse());
+    
+        if (utilisateurOpt.isPresent()) {
+            return ResponseEntity.ok(utilisateurOpt.get());
+        } else {
+            return ResponseEntity.status(401).body("Email ou mot de passe incorrect");
+        }
+    }
+    
+    
 }
+

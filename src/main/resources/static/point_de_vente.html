@@ -1,0 +1,93 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Gestion de Stock</title>
+    <link rel="stylesheet" href="PDV.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="logo1111 (3).png" alt="TechStore Logo">
+            </div>
+            <div class="logo-text">TechStore</div>
+        </div>
+        
+        <div class="nav-menu">
+            <a href="#" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="stockPDV.html" class="nav-item">
+                <i class="fas fa-box"></i>
+                <span>Stock</span>
+            </a>
+            <a href="produitPDV.html" class="nav-item">
+                <i class="fas fa-cube"></i>
+                <span>Produit</span>
+            </a>
+            <!--<a href="mouvement.html" class="nav-item">
+                <i class="fas fa-exchange-alt"></i>
+                <span>Mouvements de stocks</span>
+            </a> -->
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Deconnexion</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <body>
+          <div class="overlay">
+            <header>
+              <h1>Bienvenue à <span>Bizerte</span></h1>
+              <p id="date"></p>
+            </header>
+        
+            <section class="cards">
+              <div class="card stat">
+                <h3>Total des produits</h3>
+                <p class="number">524</p>
+                <p>Produits en magasin</p>
+              </div>
+        
+              <div class="card stat">
+                <h3>Stock disponible</h3>
+                <p class="number">3,174</p>
+                <p>Unités restantes</p>
+              </div>
+        
+              <div class="card stat">
+                <h3>Commandes en attente</h3>
+                <p class="number">12</p>
+                <p>Commandes clients à traiter</p>
+              </div>
+            </section>
+        
+            <section class="infos">
+              <div class="card full">
+                <h3>Responsable du point de vente</h3>
+                <p>Mohamed Chouikh</p>
+                <h4>Contact :</h4>
+                <p>Email : mohamed.ch1919@gmail.com<br>Tél : +216 21 456 789</p>
+              </div>
+            </section>
+          </div>
+        
+          <script>
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById("date").textContent = new Date().toLocaleDateString("fr-FR", options);
+          </script>
+        </body>
+        </html>        
+    </div>
+    
+    <!-- Font Awesome Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

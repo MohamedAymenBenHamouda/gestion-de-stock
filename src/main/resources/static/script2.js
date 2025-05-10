@@ -36,6 +36,7 @@ function modifierArticle(id) {
     })
     .catch(error => console.error("Erreur lors du chargement du produit :", error));
 }
+
 function enregistrerModification(id) {
     const produitModifie = {
         id: id,
@@ -55,8 +56,21 @@ function enregistrerModification(id) {
     .then(response => response.json())
     .then(data => {
         alert("Produit modifié avec succès !");
-        location.reload(); // Recharger la page pour voir les changements
+        // Mettre à jour manuellement la ligne dans le tableau
+        const tableBody = document.getElementById('table-body');
+        tableBody.innerHTML = ""; // Nettoyer le tableau
+        // Recharger les produits
+        fetch("http://localhost:8083/api/produits")
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(article => {
+                    if (article && article.id && article.nom) {
+                        ajouterArticle(article);
+                    }
+                });
+            });
     })
+    
     .catch(error => console.error("Erreur lors de la modification du produit :", error));
 }
 

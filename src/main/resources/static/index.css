@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('publithings_seo_a_man_in_a_warehouse_trying_to_take_stock_of_his_company-758x505.png') no-repeat center center fixed; 
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteneur semi-transparent */
+.login-container {
+    background: rgba(255, 255, 255, 0.9); /* Blanc transparent */
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo img {
+    width: 90px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 25px;
+    color: #555;
+    font-size: 15px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #f9f9f9;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #2575fc;
+    background: #fff;
+    outline: none;
+}
+
+.login-button {
+    width: 100%;
+    background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.4s ease;
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+
+.error-message {
+    color: #ff4d4d;
+    margin-top: 15px;
+    font-size: 14px;
+}

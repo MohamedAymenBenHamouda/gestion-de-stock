@@ -1,10 +1,13 @@
 package com.pfa.gestionstock.service;
 
+import com.pfa.gestionstock.entities.Entrepot;
 import com.pfa.gestionstock.entities.Produit;
+import com.pfa.gestionstock.entities.Stock;
 import com.pfa.gestionstock.repository.EntrepotRepository;
 import com.pfa.gestionstock.repository.ProduitRepository;
 /*import com.pfa.gestionstock.web.controller.ProduitRequest;*/
 
+import jakarta.transaction.TransactionScoped;
 import jakarta.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;

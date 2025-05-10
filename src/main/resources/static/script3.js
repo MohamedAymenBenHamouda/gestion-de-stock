@@ -11,7 +11,6 @@ function ajouterArticle(article) {
         <td>${article.typeLieu}</td>
 
     `;
-
     tableBody.appendChild(row);
 }
 
